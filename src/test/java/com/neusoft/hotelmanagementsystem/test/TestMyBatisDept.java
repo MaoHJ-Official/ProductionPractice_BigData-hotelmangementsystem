@@ -1,9 +1,6 @@
 package com.neusoft.hotelmanagementsystem.test;
 
 import com.neusoft.hotelmanagementsystem.HotelmanagementsystemApplication;
-import com.neusoft.hotelmanagementsystem.entity.Dept;
-import com.neusoft.hotelmanagementsystem.mapper.DeptMapper;
-import com.neusoft.hotelmanagementsystem.service.DeptService;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,28 +18,28 @@ public class TestMyBatisDept {
      * 对象类型 - @Autowired 根据数据类型进行属性的赋值操作     @Qualifier("")
      *           @Resource  根据名称 - 默认的名称（首字母小写）
      */
-    @Autowired
-    private DeptMapper deptMapper;
-
-    @Test
-    public void testInsertDept(){
-        Dept dept = Dept.builder().deptName("市场部").status(1).build();
-        deptMapper.insertDept(dept);
-    }
-
-    @Test
-    public void testSelect(){
-        Dept dept = deptMapper.selectDeptByDeptId(10001);
-        System.out.println(dept);
-    }
-
-    @Autowired
-    @Qualifier(value = "deptServiceImpl2")
-    private DeptService deptService;
-
-    @Test
-    public void testAutowired(){
-        Dept dept = Dept.builder().deptName("市场部").status(1).build();
-        deptService.addDept(dept);
-    }
+//    @Autowired
+//    private DeptMapper deptMapper;
+//
+//    @Test
+//    public void testInsertDept(){
+//        Dept dept = Dept.builder().deptName("市场部").status(1).build();
+//        deptMapper.insertDept(dept);
+//    }
+//
+//    @Test
+//    public void testSelect(){
+//        Dept dept = deptMapper.selectDeptByDeptId(10001);
+//        System.out.println(dept);
+//    }
+//
+//    @Autowired
+//    @Qualifier(value = "deptServiceImpl2")
+//    private DeptService deptService;
+//
+//    @Test
+//    public void testAutowired(){
+//        Dept dept = Dept.builder().deptName("市场部").status(1).build();
+//        deptService.addDept(dept);
+//    }
 }
