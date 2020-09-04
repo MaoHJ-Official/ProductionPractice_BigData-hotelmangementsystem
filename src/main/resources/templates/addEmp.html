@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>员工入职界面</title>
+    <link rel="stylesheet" href="/webjars/bootstrap/3.3.5/css/bootstrap.css">
+</head>
+<body>
+<div>
+    <h2>员工入职界面</h2>
+    <form class="form-horizontal" th:action="@{/emp/add}" method="post">
+        <div class="form-group">
+            <label for="inputEmail3" class="col-sm-2 control-label">员工名称:</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="inputEmail3" name="empName" required>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="inputEmail2" class="col-sm-2 control-label">员工性别:</label>
+            <div class="col-sm-10">
+                <input type="radio" id="inputEmail2" name="gender" value="男">男
+                <input type="radio"  name="gender" value="女">女
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="inputEmail1" class="col-sm-2 control-label">出生年月:</label>
+            <div class="col-sm-10">
+                <input type="date" class="form-control" id="inputEmail1" name="birthday" required>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="inputEmail4" class="col-sm-2 control-label">所属部门:</label>
+            <div class="col-sm-10">
+                <select class="form-control" id="inputEmail4" name="deptid" required >
+                    <option th:each="item : ${depts}" th:value="${item.deptId}" th:text="${item.deptName}"></option>
+                </select>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="inputEmail5" class="col-sm-2 control-label">员工职位:</label>
+            <div class="col-sm-10">
+                <input type="radio"  id="inputEmail5" name="job" value="0">普通员工
+                <input type="radio"  name="job" value="1">部门经理
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+                <button type="submit" class="btn btn-info">确定</button>
+            </div>
+        </div>
+    </form>
+</div>
+</body>
+</html>
