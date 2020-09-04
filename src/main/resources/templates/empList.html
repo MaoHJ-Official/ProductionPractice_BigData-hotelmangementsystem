@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>员工信息列表</title>
+    <link rel="stylesheet" href="/webjars/bootstrap/3.3.5/css/bootstrap.css">
+    <script src="/webjars/jquery/3.2.1/dist/jquery.js"></script>
+</head>
+<body>
+<div>
+    <h2>员工信息列表</h2>
+    <div>
+        <table class="table table-bordered table-hover">
+            <thead>
+            <tr class="info">
+                <th>序号</th>
+                <th>员工编号</th>
+                <th>员工名称</th>
+                <th>员工性别</th>
+                <th>员工生日</th>
+                <th>入职时间</th>
+                <th>员工职位</th>
+                <th>员工状态</th>
+                <th>相关操作</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:if="${#lists.isEmpty(emps)}">
+                <td colspan="5" style="text-align: center">暂无员工</td>
+            </tr>
+            <tr th:each="item, status : ${emps}">
+                <td th:text="${status.count}"></td>
+                <td th:text="${item.empId}"></td>
+                <td th:text="${item.empName}"></td>
+                <td th:text="${item.gender}"></td>
+                <td th:text="${item.birthday}"></td>
+                <td th:text="${item.hireDate}"></td>
+                <td th:text="${item.job == 0 ? '普通员工' : '部门经理'}"></td>
+                <td th:text="${item.status == 0 ? '离职' : '在职'}"></td>
+                <td>
+                    <a href="" class="btn-warning btn">编辑</a>
+                    <a href="" class="btn-danger btn">撤除</a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div>
+        <a href="/emp/preAdd" class="btn btn-success">新设员工</a>
+    </div>
+</div>
+</body>
+</html>

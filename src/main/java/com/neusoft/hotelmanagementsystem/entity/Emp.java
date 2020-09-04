@@ -23,8 +23,6 @@ public class Emp {
 
     private Date hireDate;
 
-    private Integer deptId;
-
     private Integer job;
 
     private Integer status;
