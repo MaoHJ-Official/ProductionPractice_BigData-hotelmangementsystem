@@ -58,7 +58,7 @@
         <div class="form-group">
             <label for="inputEmail3" class="col-sm-2 control-label">员工状态:</label>
             <div class="col-sm-10">
-                <select class="form-control" id="inputEmail7" name="deptName" required th:field="${emp.status}">
+                <select class="form-control" id="inputEmail7" name="status" required th:field="${emp.status}">
                     <option value="0" th:selected="${emp.status == 0 ? 'selected' : ''}">离职</option>
                     <option value="1" th:selected="${emp.status == 1 ? 'selected' : ''}">在职</option>
                 </select>

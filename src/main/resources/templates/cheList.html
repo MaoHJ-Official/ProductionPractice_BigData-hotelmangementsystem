@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>入住信息列表</title>
+    <link rel="stylesheet" href="/webjars/bootstrap/3.3.5/css/bootstrap.css">
+    <script src="/webjars/jquery/3.2.1/dist/jquery.js"></script>
+</head>
+<body>
+<div>
+    <h2>入住信息列表</h2>
+    <div>
+        <table class="table table-bordered table-hover">
+            <thead>
+            <tr class="info">
+                <th>订单号</th>
+                <th>房间号</th>
+                <th>客户名称</th>
+                <th>入住日期</th>
+                <th>退房日期</th>
+                <!--                <th>订单状态</th>-->
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:if="${#lists.isEmpty(ches)}">
+                <td colspan="5" style="text-align: center">暂无订单</td>
+            </tr>
+            <tr th:each="item, status : ${ches}">
+                <td th:text="${item.orderId}"></td>
+                <td th:text="${item.roomId}"></td>
+                <td th:text="${item.cusName}"></td>
+                <td th:text="${item.checkinDate}"></td>
+                <td th:text="${item.leaveDate}"></td>
+                <!-- <td th:text="${item.status == 0 ? '退房' : '入住'}"></td> -->
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div>
+        <!--        <a href="/che/preAdd" class="btn btn-success">新增入住信息</a>-->
+    </div>
+</div>
+</body>
+</html>

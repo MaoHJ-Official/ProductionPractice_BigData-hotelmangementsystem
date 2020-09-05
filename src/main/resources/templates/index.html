@@ -1,29 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>酒店管理系统</title>
-    <style>
-        a {
-            display: block;  /* 将行内元素转换成块级元素 */
-            /*设置高和宽*/
-            width: 500px;
-            height: 100px;
-            /*设置背景颜色*/
-            background-color: cornflowerblue;
-            /*字体颜色*/
-            color: aliceblue;
-            /*字体大小*/
-            font-size: 40px;
-            /*水平居中*/
-            text-align: center;
-            /*设置行高，垂直居中*/
-            line-height: 100px;
-        }
-    </style>
+    <link rel="stylesheet" href="/webjars/bootstrap/3.3.5/css/bootstrap.css">
 </head>
 <body>
-酒店管理系统 <br>
-<a href="/emp/showList">员工管理</a>
+<h2>酒店管理系统</h2>
+<a href="/emp/showList" class="btn btn-primary btn-lg active center-block" role="button">员工管理</a>
+<a href="/room/showList" class="btn btn-primary btn-lg active center-block" role="button">客房管理</a>
+<a href="/cus/preAdd" class="btn btn-primary btn-lg active center-block" role="button">预约管理</a>
+<a href="/che/showList" class="btn btn-primary btn-lg active center-block" role="button">入住管理</a>
 </body>
 </html>
